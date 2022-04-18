@@ -1,0 +1,18 @@
+{
+    "sourceFile": "rename3.py",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1650282846878,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1650282846878,
+            "name": "Commit-0",
+            "content": "import os\r\nimport xlrd\r\n\r\n\r\ncount = 1 \r\npath = \"C:\\\\Users\\\\Administrator\\\\Desktop\\\\123\" #文件所在文件夹\r\nexpath = \"C:\\\\Users\\\\Administrator\\\\Desktop\\\\18.xls\"#Excel表所在文件夹\r\n\r\nx1 = xlrd.open_workbook(expath)#读取excel\r\nsheet1 = x1.sheet_by_name(\"Sheet1\")#读取sheet1\r\n\r\n\r\nidlist = sheet1.col_values(0)#存放第一列\r\nxylist = sheet1.col_values(1)#存放第二列\r\n\r\n\r\n\r\n\r\nfilelist = os.listdir(path)#读取文件目录\r\n\r\nfor files in filelist:#遍历文件目录\r\n    Olddir = os.path.join(path,files)#旧的文件位置\r\n    os.renames(Olddir,os.path.join(path,str(int(idlist[count]))+\"   \"+xylist[count]))#新的文件位置\r\n    count = count +1#计数指针后移\r\n"
+        }
+    ]
+}
